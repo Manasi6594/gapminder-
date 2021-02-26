@@ -1,0 +1,74 @@
+---
+title: "Untitled"
+author: "Manasi Anand"
+date: "26/02/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+Today, we’ll use ggplot to visually explore global trends in public health and economics compiled by the Gapminder project. This project was pioneered by Hans Rosling, who is famous for describing the prosperity of nations over time through famines, wars and other historic events
+
+```{r}
+#install.packages("dslabs")
+library(dslabs)
+library(tidyverse)
+```
+```{r}
+view(gapminder)
+```
+
+```{r}
+dim(gapminder)
+```
+```{r}
+str(gapminder)
+```
+
+```{r}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+```
+
+## Life expectancy
+
+
+
+How does life expectancy relate to population size?
+
+```{r}
+ggplot(data = gap2011) +
+geom_smooth(mapping = aes(x = population, y = life_expectancy, color= continent))
+```
+
+
+
+
+
+## Fertility
+
+
+How does fetility relate to continent?
+
+```{r}
+ggplot(data = gap2011) +
+  geom_boxplot(mapping = aes(x = continent, y = fertility))
+```
+
+
+
+
+## Infant mortality
+
+How does continent relate to infant mortality?
+
+```{r}
+ggplot(data = gap2011) +
+  geom_boxplot(mapping = aes(x = continent, y = infant_mortality, color = continent))
+```
+
