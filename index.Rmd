@@ -1,0 +1,12 @@
+---
+title: "index.Rmd"
+author: "Manasi Anand"
+date: "26/02/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+This website explores trends in health and economics compiled by the Gapminder project. 

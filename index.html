@@ -12,7 +12,7 @@
 <meta name="author" content="Manasi Anand" />
 
 
-<title>Untitled</title>
+<title>index.Rmd</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -301,61 +301,14 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Untitled</h1>
+<h1 class="title toc-ignore">index.Rmd</h1>
 <h4 class="author">Manasi Anand</h4>
 <h4 class="date">26/02/2021</h4>
 
 </div>
 
 
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>Today, we’ll use ggplot to visually explore global trends in public health and economics compiled by the Gapminder project. This project was pioneered by Hans Rosling, who is famous for describing the prosperity of nations over time through famines, wars and other historic events</p>
-<pre class="r"><code>#install.packages(&quot;dslabs&quot;)
-library(dslabs)
-library(tidyverse)</code></pre>
-<pre class="r"><code>view(gapminder)</code></pre>
-<pre class="r"><code>dim(gapminder)</code></pre>
-<pre><code>## [1] 10545     9</code></pre>
-<pre class="r"><code>str(gapminder)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    10545 obs. of  9 variables:
-##  $ country         : Factor w/ 185 levels &quot;Albania&quot;,&quot;Algeria&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
-##  $ year            : int  1960 1960 1960 1960 1960 1960 1960 1960 1960 1960 ...
-##  $ infant_mortality: num  115.4 148.2 208 NA 59.9 ...
-##  $ life_expectancy : num  62.9 47.5 36 63 65.4 ...
-##  $ fertility       : num  6.19 7.65 7.32 4.43 3.11 4.55 4.82 3.45 2.7 5.57 ...
-##  $ population      : num  1636054 11124892 5270844 54681 20619075 ...
-##  $ gdp             : num  NA 1.38e+10 NA NA 1.08e+11 ...
-##  $ continent       : Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 4 1 1 2 2 3 2 5 4 3 ...
-##  $ region          : Factor w/ 22 levels &quot;Australia and New Zealand&quot;,..: 19 11 10 2 15 21 2 1 22 21 ...</code></pre>
-<pre class="r"><code>gap2011 &lt;- gapminder %&gt;% 
-  as_tibble() %&gt;% 
-  filter(year == 2011)</code></pre>
-</div>
-<div id="life-expectancy" class="section level2">
-<h2>Life expectancy</h2>
-<p>How does life expectancy relate to population size?</p>
-<pre class="r"><code>ggplot(data = gap2011) +
-geom_smooth(mapping = aes(x = population, y = life_expectancy, color= continent))</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="Gapminder_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-</div>
-<div id="fertility" class="section level2">
-<h2>Fertility</h2>
-<p>How does fetility relate to continent?</p>
-<pre class="r"><code>ggplot(data = gap2011) +
-  geom_boxplot(mapping = aes(x = continent, y = fertility))</code></pre>
-<p><img src="Gapminder_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-</div>
-<div id="infant-mortality" class="section level2">
-<h2>Infant mortality</h2>
-<p>How does continent relate to infant mortality?</p>
-<pre class="r"><code>ggplot(data = gap2011) +
-  geom_boxplot(mapping = aes(x = continent, y = infant_mortality, color = continent))</code></pre>
-<pre><code>## Warning: Removed 7 rows containing non-finite values
-## (stat_boxplot).</code></pre>
-<p><img src="Gapminder_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
-</div>
+<p>This website explores trends in health and economics compiled by the Gapminder project.</p>
 
 
 
